@@ -24,5 +24,4 @@ Se utilizaron variables como `titulo` y `mensaje`, la función `url_for()` y la 
 2. Ejecutar `python server.py`.
 3. Abrir `http://127.0.0.1:5000/` en el navegador.
 
-## GitHub
-**URL:** Pega aquí el enlace de tu repositorio.
+
