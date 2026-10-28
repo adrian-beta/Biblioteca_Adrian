@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Estilo Cyberpunk 2077 HUD - Biblioteca Universitaria
+   ========================================================================== */
+
+/* Importación de fuentes con toque futurista y técnico */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap');
+
+/* Variables principales del tema */
+:root {
+    --cp-yellow: #fcee0a;
+    --cp-cyan: #00f0ff;
+    --cp-red: #ff0055;
+    --cp-dark-bg: #0d0e15;
+    --cp-card-bg: rgba(20, 22, 34, 0.85);
+    --cp-text-main: #e0e6ed;
+    --cp-grid-line: rgba(0, 240, 255, 0.05);
+}
+
+/* Configuración global de la página */
+body {
+    background-color: var(--cp-dark-bg);
+    background-image: 
+        linear-gradient(var(--cp-grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--cp-grid-line) 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: var(--cp-text-main);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+/* Contenedor principal */
+.container-fluid {
+    max-width: 1200px;
+    padding: 20px 30px;
+}
+
+/* --------------------------------------------------------------------------
+   Encabezados (h1, h2, h3)
+   -------------------------------------------------------------------------- */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    color: var(--cp-yellow);
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(252, 238, 10, 0.4);
+    border-bottom: 3px solid var(--cp-cyan);
+    padding-bottom: 10px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: var(--cp-cyan);
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    display: inline-block;
+    background: rgba(0, 240, 255, 0.1);
+    padding: 5px 15px;
+    border-left: 4px solid var(--cp-yellow);
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+}
+
+h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: var(--cp-red);
+    text-transform: uppercase;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed var(--cp-red);
+    display: inline-block;
+    padding-right: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   Párrafos y Bloques de Texto
+   -------------------------------------------------------------------------- */
+p {
+    background: var(--cp-card-bg);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-left: 3px solid var(--cp-cyan);
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    transition: all 0.2s ease-in-out;
+}
+
+p:hover {
+    border-color: var(--cp-yellow);
+    border-left-color: var(--cp-yellow);
+    box-shadow: 0 0 12px rgba(252, 238, 10, 0.3);
+    transform: translateX(4px);
+}
+
+/* Destacado para el primer párrafo descriptivo */
+.container-fluid > p:first-of-type {
+    border-left-color: var(--cp-yellow);
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Navegación (Overriding Bootstrap Navbar)
+   -------------------------------------------------------------------------- */
+.navbar {
+    background-color: #050608 !important;
+    border: 1px solid var(--cp-yellow);
+    border-top: none;
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(252, 238, 10, 0.15);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+}
+
+.navbar-brand {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: var(--cp-yellow) !important;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.navbar-brand:hover {
+    color: #fff !important;
+    text-shadow: 0 0 8px var(--cp-yellow);
+}
+
+.nav-link {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem;
+    color: var(--cp-text-main) !important;
+    text-transform: uppercase;
+    margin-left: 15px;
+    padding: 6px 12px !important;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.nav-link:hover, 
+.nav-item.active .nav-link {
+    color: var(--cp-dark-bg) !important;
+    background-color: var(--cp-cyan);
+    font-weight: 700;
+    box-shadow: 0 0 10px var(--cp-cyan);
+}
+
+.navbar-toggler {
+    border-color: var(--cp-yellow);
+    border-radius: 0;
+}
+
+.navbar-toggler-icon {
+    filter: invert(85%) sepia(80%) saturate(1000%) hue-rotate(2deg);
+}
+
+/* Ecosistema Cyberpunk: Efecto Scanline decorativo en la pantalla */
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 4px;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0.6;
+}
