@@ -1,0 +1,152 @@
+/* ==========================================================================
+   Estilo Noche de Muertos / Halloween - Biblioteca Universitaria
+   ========================================================================== */
+
+/* Fuentes con un toque gótico elegante y legible */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* Paleta de colores temáticos */
+:root {
+    --spook-orange: #ff7518;      /* Naranja Cempasúchil / Calabaza */
+    --spook-purple: #8a2be2;      /* Morado Tradicional */
+    --spook-dark-bg: #0d0b10;     /* Fondo Noche Profunda */
+    --spook-card-bg: #16121e;     /* Fondo de contenedores */
+    --spook-text: #e2d9f3;        /* Texto claro morado suave */
+    --spook-gold: #e5a93c;        /* Dorado sutil */
+    --spook-border: rgba(138, 43, 226, 0.3);
+}
+
+/* Configuración General */
+body {
+    background-color: var(--spook-dark-bg);
+    /* Degradado sutil con iluminación de niebla inferior */
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(138, 43, 226, 0.15), transparent 70%),
+        radial-gradient(circle at 50% 100%, rgba(255, 117, 24, 0.08), transparent 70%);
+    color: var(--spook-text);
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+/* Contenedor Principal */
+.container-fluid {
+    max-width: 1100px;
+    padding: 20px 30px;
+}
+
+/* --------------------------------------------------------------------------
+   Encabezados (h1, h2, h3)
+   -------------------------------------------------------------------------- */
+h1 {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    color: var(--spook-orange);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(255, 117, 24, 0.3);
+    border-bottom: 2px solid var(--spook-purple);
+    padding-bottom: 12px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: var(--spook-gold);
+    margin-top: 35px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 4px solid var(--spook-orange);
+}
+
+h3 {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: var(--spook-purple);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed var(--spook-border);
+    display: inline-block;
+    padding-right: 15px;
+}
+
+/* --------------------------------------------------------------------------
+   Párrafos y Bloques de Información
+   -------------------------------------------------------------------------- */
+p {
+    background-color: var(--spook-card-bg);
+    border: 1px solid var(--spook-border);
+    border-radius: 6px;
+    padding: 16px 22px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+p:hover {
+    border-color: var(--spook-orange);
+    box-shadow: 0 4px 20px rgba(255, 117, 24, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Destacado para el primer párrafo descriptivo */
+.container-fluid > p:first-of-type {
+    border-left: 4px solid var(--spook-purple);
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   Navegación (Overriding Bootstrap Navbar)
+   -------------------------------------------------------------------------- */
+.navbar {
+    background-color: #110d18 !important;
+    border: 1px solid var(--spook-border);
+    border-bottom: 2px solid var(--spook-orange);
+    border-radius: 8px;
+    padding: 15px 25px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+.navbar-brand {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--spook-orange) !important;
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+    color: var(--spook-gold) !important;
+    text-shadow: 0 0 10px rgba(229, 169, 60, 0.5);
+}
+
+.nav-link {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    color: var(--spook-text) !important;
+    margin-left: 10px;
+    padding: 8px 16px !important;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, 
+.nav-item.active .nav-link {
+    color: #ffffff !important;
+    background-color: var(--spook-purple);
+    box-shadow: 0 0 12px rgba(138, 43, 226, 0.5);
+}
+
+.navbar-toggler {
+    border-color: var(--spook-orange);
+}
+
+.navbar-toggler-icon {
+    filter: invert(60%) sepia(90%) saturate(1000%) hue-rotate(345deg);
+}
